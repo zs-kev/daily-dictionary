@@ -1,0 +1,6 @@
+.container {
+  margin-top: 58px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

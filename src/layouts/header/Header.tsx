@@ -2,7 +2,10 @@
 
 import ToggleSwitch from "@/components/toggles/toggleSwitch/ToggleSwitch";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import { useEffect, useState } from "react";
+
+import styles from "./Header.module.css";
 
 export default function Header() {
   const [mounted, setMounted] = useState(false);
@@ -30,8 +33,16 @@ export default function Header() {
   };
 
   return (
-    <header>
-      <ToggleSwitch onToggle={handleClick} checked={themeCheck} />
+    <header className={styles.container}>
+      <Image
+        src="/assets/images/logos/logo.svg"
+        alt="Daily Dictionary"
+        width="32"
+        height="36"
+      />
+      <div>
+        <ToggleSwitch onToggle={handleClick} checked={themeCheck} />
+      </div>
     </header>
   );
 }
