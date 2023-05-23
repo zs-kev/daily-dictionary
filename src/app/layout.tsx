@@ -1,3 +1,4 @@
+import Header from "@/layouts/header/Header";
 import { Providers } from "@/lib/providers/Providers";
 import { Inconsolata, Inter, Lora, LoraItalic } from "../styles/fonts";
 import "./globals.css";
@@ -17,7 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={fonts}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Header />
+          <main>{children}</main>
+        </Providers>
       </body>
     </html>
   );
