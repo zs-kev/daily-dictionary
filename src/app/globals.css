@@ -12,11 +12,13 @@
 
   --foreground: var(--black);
   --background: var(--white);
+  --gray-purple: var(--gray);
 }
 
 [data-theme="dark"] {
   --foreground: var(--white);
   --background: var(--black);
+  --gray-purple: var(--purple);
 }
 
 * {
