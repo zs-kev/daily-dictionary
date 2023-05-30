@@ -8,3 +8,12 @@
 .stroke {
   stroke: var(--gray-purple);
 }
+
+.wrapper {
+  display: flex;
+}
+
+.divider {
+  background: var(--platinum);
+  width: 1px;
+}

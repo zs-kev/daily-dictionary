@@ -28,6 +28,10 @@
   transition: 0.4s;
 }
 
+.slider:hover {
+  background-color: var(--purple);
+}
+
 .slider:before {
   position: absolute;
   content: "";

@@ -54,7 +54,8 @@ export default function Header() {
         width="32"
         height="36"
       />
-      <div>
+      <div className={styles.wrapper}>
+        <div className={styles.divider} />
         <ToggleSwitch
           onToggle={handleClick}
           checked={themeCheck}

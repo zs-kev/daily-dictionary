@@ -17,12 +17,16 @@ const ToggleSwitch: React.FC<toggleSwitchProps> = ({
 }) => {
   return (
     <label className={styles.container}>
-      <div style={{ marginRight: contentMargin + "rem" }}>{contentLeft}</div>
+      {contentLeft && (
+        <div style={{ marginRight: contentMargin + "rem" }}>{contentLeft}</div>
+      )}
       <div className={styles.switch}>
         <input type="checkbox" checked={checked} onChange={onToggle} />
         <span className={`${styles.slider} ${styles.round}`}></span>
       </div>
-      <div style={{ marginLeft: contentMargin + "rem" }}>{contentRight}</div>
+      {contentRight && (
+        <div style={{ marginLeft: contentMargin + "rem" }}>{contentRight}</div>
+      )}
     </label>
   );
 };
