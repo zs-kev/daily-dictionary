@@ -13,6 +13,14 @@
   --foreground: var(--black);
   --background: var(--white);
   --gray-purple: var(--gray);
+
+  --sans-serif: var(--font-inter);
+  --serif: var(--font-lora);
+  --serif-italic: var(--font-lora_italic);
+  --mono: var(--font-inconsolata);
+
+  --global-font-family: var(--sans-serif);
+  --global-font-family-italic: var(--sans-serif);
 }
 
 [data-theme="dark"] {
@@ -31,7 +39,6 @@ html,
 body {
   max-width: 737px;
   margin: 0 auto;
-  overflow-x: hidden;
   font-size: 18px;
 }
 
@@ -43,6 +50,10 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+h1 {
+  font-family: var(--global-font-family);
 }
 
 @media (prefers-color-scheme: dark) {

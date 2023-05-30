@@ -1,9 +1,7 @@
 import Header from "@/layouts/header/Header";
 import { Providers } from "@/lib/providers/Providers";
-import { Inconsolata, Inter, Lora, LoraItalic } from "../styles/fonts";
+import { inconsolata, inter, lora, lora_italic } from "../styles/fonts";
 import "./globals.css";
-
-const fonts = `${Inconsolata} ${Inter} ${Lora} ${LoraItalic}`;
 
 export const metadata = {
   title: "Daily Dictionary",
@@ -16,8 +14,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={fonts}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inconsolata.variable} ${inter.variable} ${lora.variable} ${lora_italic.variable}`}
+      style={{
+        fontFamily: "var(--global-font-family)",
+        fontStyle: "normal",
+      }}
+    >
+      <body>
         <Providers>
           <Header />
           <main>{children}</main>

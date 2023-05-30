@@ -1,3 +1,27 @@
 .container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  outline: none;
+}
+
+.value {
+  flex-grow: 1;
+}
+
+.options {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-radius: 0.5em;
+  right: 0;
+  top: calc(100% + 0.5em);
+  width: 100%;
+  overflow-y: auto;
+  display: none;
+}
+
+.show {
   display: block;
 }

@@ -1,19 +1,23 @@
 import localFont from "next/font/local";
 
-const Inconsolata = localFont({
+const inconsolata = localFont({
   src: "./fonts/Inconsolata-VariableFont.ttf",
+  variable: "--font-inconsolata",
 });
 
-const Inter = localFont({
+const inter = localFont({
   src: "./fonts/Inter-VariableFont.ttf",
+  variable: "--font-inter",
 });
 
-const Lora = localFont({
+const lora = localFont({
   src: "./fonts/Lora-VariableFont.ttf",
+  variable: "--font-lora",
 });
 
-const LoraItalic = localFont({
+const lora_italic = localFont({
   src: "./fonts/Lora-Italic-VariableFont.ttf",
+  variable: "--font-lora_italic",
 });
 
-export { Inconsolata, Inter, Lora, LoraItalic };
+export { inconsolata, inter, lora, lora_italic };

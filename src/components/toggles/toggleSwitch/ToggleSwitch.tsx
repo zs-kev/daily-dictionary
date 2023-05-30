@@ -16,7 +16,7 @@ const ToggleSwitch: React.FC<toggleSwitchProps> = ({
   contentMargin = 0,
 }) => {
   return (
-    <label className={styles.container}>
+    <label tabIndex={0} className={styles.container}>
       {contentLeft && (
         <div style={{ marginRight: contentMargin + "rem" }}>{contentLeft}</div>
       )}

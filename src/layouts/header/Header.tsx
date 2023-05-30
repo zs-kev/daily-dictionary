@@ -5,11 +5,56 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+import Dropdown from "@/components/dropdowns/dropdown/Dropdown";
 import styles from "./Header.module.css";
+
+const options = [
+  { label: "Sans Serif", value: "sans-serif", class: styles.sans },
+  { label: "Serif", value: "serif", class: styles.serif },
+  { label: "Mono", value: "mono", class: styles.mono },
+];
 
 export default function Header() {
   const [mounted, setMounted] = useState(false);
+  const [value, setValue] = useState<(typeof options)[0] | undefined>(
+    options[0]
+  );
   const { systemTheme, theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    if (typeof value === "object") {
+      handleFontChange(value.value);
+    }
+  }, [value]);
+
+  const handleFontChange = (font: string) => {
+    console.log(font);
+    const globalFont = "--global-font-family";
+    const globalFontItalic = "--global-font-family-italic";
+
+    if (font === "sans-serif") {
+      document.documentElement.style.setProperty(
+        globalFont,
+        "var(--sans-serif)"
+      );
+      document.documentElement.style.setProperty(
+        globalFontItalic,
+        "var(--sans-serif)"
+      );
+    } else if (font === "serif") {
+      document.documentElement.style.setProperty(globalFont, "var(--serif)");
+      document.documentElement.style.setProperty(
+        globalFontItalic,
+        "var(--serif-italic)"
+      );
+    } else if (font === "mono") {
+      document.documentElement.style.setProperty(globalFont, "var(--mono)");
+      document.documentElement.style.setProperty(
+        globalFontItalic,
+        "var(--mono)"
+      );
+    }
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -55,6 +100,11 @@ export default function Header() {
         height="36"
       />
       <div className={styles.wrapper}>
+        <Dropdown
+          options={options}
+          value={value}
+          onChange={(option) => setValue(option)}
+        />
         <div className={styles.divider} />
         <ToggleSwitch
           onToggle={handleClick}
