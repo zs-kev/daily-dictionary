@@ -15,7 +15,8 @@
 
 .divider {
   background: var(--platinum);
-  width: 1px;
+  width: 0.056em;
+  margin: 0 1.444em;
 }
 
 .sans {

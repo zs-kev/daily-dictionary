@@ -13,6 +13,9 @@
   --foreground: var(--black);
   --background: var(--white);
   --gray-purple: var(--gray);
+  --white-eerie-black: var(--white);
+
+  --black-purple-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
 
   --sans-serif: var(--font-inter);
   --serif: var(--font-lora);
@@ -27,6 +30,9 @@
   --foreground: var(--white);
   --background: var(--black);
   --gray-purple: var(--purple);
+  --white-eerie-black: var(--eerie-black);
+
+  --black-purple-shadow: 0px 5px 30px 0px var(--purple);
 }
 
 * {

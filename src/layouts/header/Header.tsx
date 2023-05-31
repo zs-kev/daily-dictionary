@@ -22,13 +22,29 @@ export default function Header() {
   const { systemTheme, theme, setTheme } = useTheme();
 
   useEffect(() => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      const currentFont = localStorage.getItem("font");
+      const option = options.find((option) => option.value === currentFont);
+      if (option) {
+        setValue(option);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
     if (typeof value === "object") {
       handleFontChange(value.value);
+      handleSave(value.value);
     }
   }, [value]);
 
+  const handleSave = (font: string) => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      localStorage.setItem("font", font);
+    }
+  };
+
   const handleFontChange = (font: string) => {
-    console.log(font);
     const globalFont = "--global-font-family";
     const globalFontItalic = "--global-font-family-italic";
 
@@ -61,7 +77,16 @@ export default function Header() {
   }, []);
 
   if (!mounted) {
-    return <div></div>;
+    return (
+      <header className={styles.container}>
+        <Image
+          src="/assets/images/logos/logo.svg"
+          alt="Daily Dictionary"
+          width="32"
+          height="36"
+        />
+      </header>
+    );
   }
 
   const currentTheme = theme === "system" ? systemTheme : theme;

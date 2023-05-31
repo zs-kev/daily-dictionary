@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState } from "react";
 import styles from "./Dropdown.module.css";
 
@@ -31,7 +32,6 @@ const Dropdown: React.FC<dropdownProps> = ({ value, options, onChange }) => {
       className={styles.container}
     >
       <span className={styles.value}>{value?.label}</span>
-      <button className={styles.arrow}></button>
       <ul className={`${styles.options} ${isOpen ? styles.show : ""}`}>
         {options.map((option) => (
           <li
@@ -41,12 +41,19 @@ const Dropdown: React.FC<dropdownProps> = ({ value, options, onChange }) => {
               setIsOpen(false);
             }}
             key={option.label}
-            className={`${styles.optionz} ${option.class}`}
+            className={`${styles.option} ${option.class}`}
           >
             {option.label}
           </li>
         ))}
       </ul>
+      <Image
+        src={"./assets/images/icons/icon-down-arrow.svg"}
+        alt={"change font"}
+        width="15"
+        height="9"
+        className={styles.arrow}
+      />
     </div>
   );
 };
