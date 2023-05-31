@@ -4,7 +4,7 @@ const url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
 export function SearchWord() {
   const [status, setStatus] = useState("idle");
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState<unknown | null>(null);
 
   async function getResult(word: string) {
     setStatus("loading");
