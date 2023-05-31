@@ -1,5 +1,6 @@
 "use client";
 
+import NoResults from "@/layouts/Searchresults/noResults/NoResults";
 import Search from "@/layouts/search/Search";
 import { SearchWord } from "@/lib/api/DictionaryApi";
 
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <div>
       <Search submitSearch={submitSearch} />
+      {status === "error" && <NoResults />}
     </div>
   );
 }
