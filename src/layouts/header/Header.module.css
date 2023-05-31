@@ -19,6 +19,12 @@
   margin: 0 1.444em;
 }
 
+@media (width <= 548px) {
+  .divider {
+    margin: 0 0.889em;
+  }
+}
+
 .sans {
   font-family: var(--sans-serif);
 }

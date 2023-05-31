@@ -47,3 +47,9 @@
 .arrow {
   margin-left: 1em;
 }
+
+@media (width <= 548px) {
+  .arrow {
+    margin-left: 0.833em;
+  }
+}
