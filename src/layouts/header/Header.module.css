@@ -20,6 +20,9 @@
 }
 
 @media (width <= 548px) {
+  .container {
+    margin-top: 24px;
+  }
   .divider {
     margin: 0 0.889em;
   }
