@@ -1,0 +1,21 @@
+.container {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  margin-top: 7.33rem;
+}
+
+.emoji {
+  font-size: 3.556rem;
+}
+
+.heading {
+  font-size: 1.111rem;
+  font-weight: bold;
+  margin-top: 2.111rem;
+  margin-bottom: 1.899rem;
+}
+
+.text {
+  color: var(--gray);
+}
