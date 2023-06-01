@@ -2,9 +2,7 @@
 
 import LoadedResults from "@/layouts/Searchresults/loadedResults/LoadedResults";
 import LoadingResults from "@/layouts/Searchresults/loadingResults/LoadingResults";
-import NoResults from "@/layouts/Searchresults/noResults/NoResults";
 import Search from "@/layouts/search/Search";
-import Welcome from "@/layouts/welcome/Welcome";
 import { SearchWord } from "@/lib/api/DictionaryApi";
 
 export default function Home() {
@@ -20,9 +18,9 @@ export default function Home() {
         submitSearch={submitSearch}
         disabled={status === "loading" ? true : false}
       />
-      {status === "idle" && <Welcome />}
-      {status === "error" && <NoResults />}
-      {status === "loading" && <LoadingResults />}
+      {status === "idle" && <LoadingResults status={"idle"} />}
+      {status === "error" && <LoadingResults status={"error"} />}
+      {status === "loading" && <LoadingResults status={"loading"} />}
       {status === "success" && <LoadedResults result={result} />}
     </div>
   );
