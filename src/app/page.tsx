@@ -1,5 +1,6 @@
 "use client";
 
+import LoadingResults from "@/layouts/Searchresults/loadingResults/LoadingResults";
 import NoResults from "@/layouts/Searchresults/noResults/NoResults";
 import Search from "@/layouts/search/Search";
 import { SearchWord } from "@/lib/api/DictionaryApi";
@@ -15,8 +16,12 @@ export default function Home() {
 
   return (
     <div>
-      <Search submitSearch={submitSearch} />
+      <Search
+        submitSearch={submitSearch}
+        disabled={status === "loading" ? true : false}
+      />
       {status === "error" && <NoResults />}
+      {status === "loading" && <LoadingResults />}
       {status === "success" && (
         <div>
           {Array.isArray(result) && result.length > 0 && (

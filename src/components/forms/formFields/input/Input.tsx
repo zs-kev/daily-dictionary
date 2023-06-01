@@ -11,6 +11,7 @@ interface InputProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   children?: React.ReactNode;
   inputState?: string;
+  disabled: boolean;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -22,6 +23,7 @@ const Input: React.FC<InputProps> = ({
   onChange,
   children,
   inputState,
+  disabled,
 }) => {
   const ref = useRef<HTMLInputElement>(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -66,6 +68,7 @@ const Input: React.FC<InputProps> = ({
           onChange={onChange}
           className={styles.searchBar}
           ref={ref}
+          disabled={disabled}
         />
         {children}
       </div>

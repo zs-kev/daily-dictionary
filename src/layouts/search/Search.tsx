@@ -3,7 +3,13 @@ import Image from "next/image";
 import React, { useState } from "react";
 import styles from "./Search.module.css";
 
-export default function Search({ submitSearch }: any) {
+export default function Search({
+  submitSearch,
+  disabled,
+}: {
+  submitSearch: any;
+  disabled: boolean;
+}) {
   const [searchTerm, setSearchTerm] = useState("");
   const [inputState, setInputState] = useState("idle");
 
@@ -30,6 +36,7 @@ export default function Search({ submitSearch }: any) {
         type="text"
         onChange={handleChange}
         inputState={inputState}
+        disabled={disabled}
       >
         <button type="submit" className={styles.button}>
           <Image
