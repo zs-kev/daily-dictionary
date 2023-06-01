@@ -28,7 +28,7 @@ export default function Search({
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.container}>
       <Input
         value={searchTerm}
         name="search"
