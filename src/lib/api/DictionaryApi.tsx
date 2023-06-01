@@ -18,7 +18,6 @@ export function SearchWord() {
     const json = await response.json();
     setResult(json);
     setStatus("success");
-    console.log(json);
   }
 
   function handleSearch(word: string) {
