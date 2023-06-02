@@ -1,5 +1,22 @@
+.mainword {
+  margin-bottom: 2rem;
+}
+
 .phonetic {
   font-size: 1.333rem;
   color: var(--purple);
   margin-top: 0.25rem;
+}
+
+.partofspeech {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.partofspeech div {
+  background-color: var(--platinum);
+  height: 1px;
+  width: 100%;
+  margin-left: 1.111em;
 }

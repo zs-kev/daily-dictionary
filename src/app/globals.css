@@ -70,6 +70,19 @@ h1 {
   font-size: 3.556rem;
 }
 
+h2 {
+  font-family: var(--global-font-family-italic);
+  font-size: 1.333rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: var(--global-font-family);
+  font-size: 1.11rem;
+  color: var(--gray);
+  font-weight: 400;
+}
+
 @media (width <= 548px) {
   header,
   main {

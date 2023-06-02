@@ -67,21 +67,24 @@ export default function LoadedResults({ result, handleClick }: any) {
 
   const definitionMeaning = partsOfSpeech.map((partOfSpeech, index) => {
     const meanings = partsOfSpeechMeanings[partOfSpeech];
-
-    return (
-      <div key={index}>
-        <h2>
-          {partsOfSpeechMeanings[partOfSpeech].length > 0 && partOfSpeech}
-        </h2>
-        <WordMeaning meanings={meanings} handleClick={handleClick} />
-      </div>
-    );
+    if (partsOfSpeechMeanings[partOfSpeech].length > 0) {
+      return (
+        <div key={index}>
+          <div className={styles.partofspeech}>
+            <h2>{partOfSpeech}</h2>
+            <div />
+          </div>
+          <WordMeaning meanings={meanings} handleClick={handleClick} />
+        </div>
+      );
+    }
+    return;
   });
 
   return (
     <div className={styles.container}>
       <div>
-        <div>
+        <div className={styles.mainword}>
           <h1>{word}</h1>
           <p className={styles.phonetic}>{phonetic}</p>
         </div>

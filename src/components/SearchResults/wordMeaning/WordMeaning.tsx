@@ -21,12 +21,12 @@ const WordMeaning: React.FC<WordMeaningProps> = ({ meanings, handleClick }) => {
   }
 
   return (
-    <div>
-      <h3>Meaning</h3>
+    <div className={styles.container}>
+      <h3 className={styles.definitionHeading}>Meaning</h3>
       <ul className={styles.list}>
         {meaning.meanings.map((meaning, index) => (
           <li key={index}>
-            <p className={styles.meaning}>{meaning.definition}</p>
+            {meaning.definition}
             {meaning.example.length > 0 && (
               <p className={styles.example}>{`"${meaning.example}"`}</p>
             )}
@@ -35,7 +35,7 @@ const WordMeaning: React.FC<WordMeaningProps> = ({ meanings, handleClick }) => {
       </ul>
       {meaning.synonyms.length > 0 && (
         <div>
-          <h3>Synonyms</h3>
+          <h3 className={styles.synonym}>Synonyms</h3>
           {meaning.synonyms.map((synonym, index) => (
             <button key={index} onClick={() => handleClick(synonym)}>
               {synonym}

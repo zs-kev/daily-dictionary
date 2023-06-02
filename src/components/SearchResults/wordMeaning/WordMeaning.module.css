@@ -1,15 +1,34 @@
 .container {
-  display: block;
+  margin: 2rem 0;
+}
+
+.definitionHeading {
+  margin-bottom: 1.333rem;
+}
+
+.synonym {
+  margin-top: 3.333rem;
 }
 
 .list {
-  list-style: none;
   font-family: var(--global-font-family);
   font-weight: 400;
+  display: grid;
+  row-gap: 0.779em;
+  grid-template-columns: min-content 1fr;
+  overflow-wrap: break-word;
 }
 
-.meaning {
-  display: inline;
+.list li,
+.example {
+  display: contents;
+  list-style: none;
+}
+
+.example {
+  display: block;
+  grid-column: 2;
+  color: var(--gray);
 }
 
 .list li::before {
