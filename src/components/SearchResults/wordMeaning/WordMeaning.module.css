@@ -1,3 +1,20 @@
 .container {
   display: block;
 }
+
+.list {
+  list-style: none;
+  font-family: var(--global-font-family);
+  font-weight: 400;
+}
+
+.meaning {
+  display: inline;
+}
+
+.list li::before {
+  content: "\2022";
+  color: var(--purple);
+  display: inline;
+  padding: 0 1.111rem;
+}

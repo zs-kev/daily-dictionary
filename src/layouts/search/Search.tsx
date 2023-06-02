@@ -1,17 +1,23 @@
 import Input from "@/components/forms/formFields/input/Input";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Search.module.css";
 
 export default function Search({
   submitSearch,
   disabled,
+  currentSearchWord,
 }: {
   submitSearch: any;
   disabled: boolean;
+  currentSearchWord: string;
 }) {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(currentSearchWord);
   const [inputState, setInputState] = useState("idle");
+
+  useEffect(() => {
+    setSearchTerm(currentSearchWord);
+  }, [currentSearchWord]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);

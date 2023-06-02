@@ -2,7 +2,7 @@ import WordMeaning from "@/components/SearchResults/wordMeaning/WordMeaning";
 import Link from "next/link";
 import styles from "./LoadedResults.module.css";
 
-export default function LoadedResults({ result }: any) {
+export default function LoadedResults({ result, handleClick }: any) {
   let word: string = "",
     phonetic: string = "",
     url: string = "";
@@ -73,7 +73,7 @@ export default function LoadedResults({ result }: any) {
         <h2>
           {partsOfSpeechMeanings[partOfSpeech].length > 0 && partOfSpeech}
         </h2>
-        <WordMeaning meanings={meanings} />
+        <WordMeaning meanings={meanings} handleClick={handleClick} />
       </div>
     );
   });

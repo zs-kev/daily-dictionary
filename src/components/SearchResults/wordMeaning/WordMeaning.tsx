@@ -1,3 +1,5 @@
+import styles from "./WordMeaning.module.css";
+
 interface WordMeaningProps {
   meanings: {
     meanings: {
@@ -7,9 +9,11 @@ interface WordMeaningProps {
     synonyms: string[];
     antonyms: string[];
   }[];
+  // eslint-disable-next-line no-unused-vars
+  handleClick: (clickedWord: string) => void;
 }
 
-const WordMeaning: React.FC<WordMeaningProps> = ({ meanings }) => {
+const WordMeaning: React.FC<WordMeaningProps> = ({ meanings, handleClick }) => {
   const [meaning] = meanings;
 
   if (!meaning) {
@@ -19,11 +23,13 @@ const WordMeaning: React.FC<WordMeaningProps> = ({ meanings }) => {
   return (
     <div>
       <h3>Meaning</h3>
-      <ul>
+      <ul className={styles.list}>
         {meaning.meanings.map((meaning, index) => (
           <li key={index}>
-            <p>{meaning.definition}</p>
-            {meaning.example.length > 0 && <p>{`"${meaning.example}"`}</p>}
+            <p className={styles.meaning}>{meaning.definition}</p>
+            {meaning.example.length > 0 && (
+              <p className={styles.example}>{`"${meaning.example}"`}</p>
+            )}
           </li>
         ))}
       </ul>
@@ -31,7 +37,9 @@ const WordMeaning: React.FC<WordMeaningProps> = ({ meanings }) => {
         <div>
           <h3>Synonyms</h3>
           {meaning.synonyms.map((synonym, index) => (
-            <p key={index}>{synonym}</p>
+            <button key={index} onClick={() => handleClick(synonym)}>
+              {synonym}
+            </button>
           ))}
         </div>
       )}
@@ -39,7 +47,9 @@ const WordMeaning: React.FC<WordMeaningProps> = ({ meanings }) => {
         <div>
           <h3>Antonyms</h3>
           {meaning.antonyms.map((antonym, index) => (
-            <p key={index}>{antonym}</p>
+            <button key={index} onClick={() => handleClick(antonym)}>
+              {antonym}
+            </button>
           ))}
         </div>
       )}
