@@ -40,10 +40,6 @@
 }
 
 @media (width <= 548px) {
-  .wrapper {
-    margin-top: 1.333rem;
-    margin-bottom: 1.667rem;
-  }
   .container {
     height: 2.667em;
     padding-top: 0.833rem;

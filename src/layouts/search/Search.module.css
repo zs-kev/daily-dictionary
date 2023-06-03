@@ -7,3 +7,10 @@
   border: 0;
   background: transparent;
 }
+
+@media (width <= 548px) {
+  .container {
+    margin-top: 1.333rem;
+    margin-bottom: 1.667rem;
+  }
+}

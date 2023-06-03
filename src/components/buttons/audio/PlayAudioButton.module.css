@@ -4,10 +4,22 @@
   cursor: pointer;
 }
 
+.container svg {
+  width: 75px;
+  height: 75px;
+}
+
 .container:hover .fillCircle {
   opacity: 100%;
 }
 
 .container:hover .fillPath {
   fill: var(--white);
+}
+
+@media (width <= 548px) {
+  .container svg {
+    width: 48px;
+    height: 48px;
+  }
 }

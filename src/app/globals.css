@@ -96,6 +96,16 @@ h3 {
   h1 {
     font-size: 1.778rem;
   }
+  h2 {
+    font-size: 1rem;
+  }
+  h3 {
+    font-size: 0.889rem;
+  }
+  p,
+  li {
+    font-size: 0.883rem;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

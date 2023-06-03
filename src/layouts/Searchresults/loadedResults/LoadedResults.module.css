@@ -54,3 +54,13 @@
 .icon {
   margin-left: 0.444rem;
 }
+
+@media (width <= 548px) {
+  .phonetic {
+    font-size: 1rem;
+  }
+  .source {
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+}
