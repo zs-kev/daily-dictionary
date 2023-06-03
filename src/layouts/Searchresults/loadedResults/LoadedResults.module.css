@@ -1,3 +1,13 @@
+.container {
+  margin-bottom: 2.889rem;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .mainword {
   margin-bottom: 2rem;
 }
@@ -14,9 +24,33 @@
   justify-content: space-between;
 }
 
-.partofspeech div {
+.partofspeech div,
+.linkLine {
   background-color: var(--platinum);
   height: 1px;
   width: 100%;
+}
+
+.partofspeech div {
   margin-left: 1.111em;
+}
+
+.linkLine {
+  margin-bottom: 1rem;
+}
+
+.source {
+  color: var(--gray);
+  margin-right: 1.111rem;
+}
+
+.link {
+  font-size: 0.778rem;
+  font-family: var(--global-font-family);
+  text-decoration: underline;
+  text-decoration-color: var(--gray);
+}
+
+.icon {
+  margin-left: 0.444rem;
 }

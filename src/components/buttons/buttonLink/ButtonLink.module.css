@@ -1,0 +1,14 @@
+.button {
+  background: transparent;
+  border: none;
+  color: var(--purple);
+  font-size: 1.111rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: var(--global-font-family);
+}
+
+.button:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--purple);
+}

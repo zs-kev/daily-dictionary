@@ -1,3 +1,4 @@
+import ButtonLink from "@/components/buttons/buttonLink/ButtonLink";
 import styles from "./WordMeaning.module.css";
 
 interface WordMeaningProps {
@@ -34,23 +35,27 @@ const WordMeaning: React.FC<WordMeaningProps> = ({ meanings, handleClick }) => {
         ))}
       </ul>
       {meaning.synonyms.length > 0 && (
-        <div>
+        <div className={`${styles.synAntWrapper} ${styles.hasAnt}`}>
           <h3 className={styles.synonym}>Synonyms</h3>
-          {meaning.synonyms.map((synonym, index) => (
-            <button key={index} onClick={() => handleClick(synonym)}>
-              {synonym}
-            </button>
-          ))}
+          <div className={styles.synAnt}>
+            {meaning.synonyms.map((synonym, index) => (
+              <ButtonLink key={index} handleClick={handleClick}>
+                {synonym}
+              </ButtonLink>
+            ))}
+          </div>
         </div>
       )}
       {meaning.antonyms.length > 0 && (
-        <div>
+        <div className={styles.synAntWrapper}>
           <h3>Antonyms</h3>
-          {meaning.antonyms.map((antonym, index) => (
-            <button key={index} onClick={() => handleClick(antonym)}>
-              {antonym}
-            </button>
-          ))}
+          <div className={styles.synAnt}>
+            {meaning.antonyms.map((antonym, index) => (
+              <ButtonLink key={index} handleClick={handleClick}>
+                {antonym}
+              </ButtonLink>
+            ))}
+          </div>
         </div>
       )}
     </div>

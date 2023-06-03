@@ -1,11 +1,14 @@
 import WordMeaning from "@/components/SearchResults/wordMeaning/WordMeaning";
-import Link from "next/link";
+import PlayAudioButton from "@/components/buttons/audio/PlayAudioButton";
+import Image from "next/image";
 import styles from "./LoadedResults.module.css";
 
 export default function LoadedResults({ result, handleClick }: any) {
   let word: string = "",
     phonetic: string = "",
     url: string = "";
+
+  const audioLink: string[] = [];
 
   const partsOfSpeechMeanings: Record<string, any[]> = {
     noun: [],
@@ -35,11 +38,21 @@ export default function LoadedResults({ result, handleClick }: any) {
       phonetic: firstPhonetic,
       sourceUrls,
       meanings,
+      phonetics,
     } = result[0];
 
     word = firstWord;
     phonetic = firstPhonetic;
     url = sourceUrls[0];
+
+    if (phonetics) {
+      phonetics.forEach((phonetic: any) => {
+        const { audio } = phonetic;
+        if (audio) {
+          audioLink.push(audio);
+        }
+      });
+    }
 
     if (meanings) {
       meanings.forEach((meaning: any) => {
@@ -83,16 +96,26 @@ export default function LoadedResults({ result, handleClick }: any) {
 
   return (
     <div className={styles.container}>
-      <div>
+      <div className={styles.wrapper}>
         <div className={styles.mainword}>
           <h1>{word}</h1>
-          <p className={styles.phonetic}>{phonetic}</p>
+          {phonetic && <p className={styles.phonetic}>{phonetic}</p>}
         </div>
-        {definitionMeaning}
+        {audioLink.length > 0 && <PlayAudioButton audioLinks={audioLink} />}
       </div>
-      <Link href={url}>
-        Source <span>{url}</span>
-      </Link>
+      {definitionMeaning}
+      <div className={styles.linkLine} />
+      <a href={url} rel="noopener noreferrer" target="_blank">
+        <span className={`${styles.source} ${styles.link}`}>Source</span>
+        <span className={styles.link}>{url}</span>
+        <Image
+          src={"./assets/images/icons/icon-new-window.svg"}
+          alt={"Open link in new window"}
+          width={13}
+          height={13}
+          className={styles.icon}
+        />
+      </a>
     </div>
   );
 }

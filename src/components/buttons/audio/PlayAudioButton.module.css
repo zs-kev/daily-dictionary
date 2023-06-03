@@ -1,3 +1,13 @@
 .container {
-  display: block;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.container:hover .fillCircle {
+  opacity: 100%;
+}
+
+.container:hover .fillPath {
+  fill: var(--white);
 }

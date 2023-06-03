@@ -37,6 +37,10 @@
   --black-purple-shadow: 0px 5px 30px 0px var(--purple);
 }
 
+::selection {
+  background: var(--purple);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -72,6 +76,7 @@ h1 {
 
 h2 {
   font-family: var(--global-font-family-italic);
+  font-style: italic;
   font-size: 1.333rem;
   font-weight: bold;
 }
